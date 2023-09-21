@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Sicon.NuGetHelper.1.0.10\build\Sicon.NuGetHelper.props" Condition="Exists('packages\Sicon.NuGetHelper.1.0.10\build\Sicon.NuGetHelper.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69D902EC-7BF0-40BF-813B-FE9251C89CAF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExampleWebApiExtension.WebAPI</RootNamespace>
+    <AssemblyName>ExampleWebApiExtension.WebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bugsnag, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Bugsnag.2.2.1\lib\net45\Bugsnag.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CronExpressionDescriptor, Version=1.21.2.0, Culture=neutral, PublicKeyToken=a2ab0e0f73f9b037, processorArchitecture=MSIL">
+      <HintPath>packages\CronExpressionDescriptor.1.21.2\lib\net45\CronExpressionDescriptor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cronos, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Cronos.0.7.1\lib\net45\Cronos.dll</HintPath>
+    </Reference>
+    <Reference Include="DDay.iCal, Version=1.0.2.575, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\DDay.iCal.1.0.2.575\lib\DDay.iCal.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Authenticator, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\GoogleAuthenticator.2.0.0\lib\net45\Google.Authenticator.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.7.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Hangfire.Core.1.7.27\lib\net46\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.7.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Hangfire.SqlServer.1.7.27\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.SignalR.Client.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.SignalR.Core.2.4.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices.Auth, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.49.1.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Identity.Client.4.49.1\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.26.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Abstractions.6.26.1\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.26.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.6.26.1\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.26.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.6.26.1\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.26.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.6.26.1\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.3.5\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=2.4.1.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>packages\Quartz.2.4.1\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Commercials, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Commercials.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Common, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Common.PersistentObjects, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Common.PersistentObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Datamodel, Version=19.0.0.0, Culture=neutral, PublicKeyToken=12655784e6b771dd, processorArchitecture=MSIL">
+      <HintPath>packages\Sage.Accounting.DataModel.221.0.40.3\lib\net452\Sage.Accounting.Datamodel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Exceptions.Commercials, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Exceptions.Commercials.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Exceptions.Common, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Exceptions.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Exceptions.Financials, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Exceptions.Financials.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Exceptions.People, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Exceptions.People.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Exceptions.ProjectCosting, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Exceptions.ProjectCosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Exceptions.ProjectCosting.Billing, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Exceptions.ProjectCosting.Billing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Exceptions.TSE, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Exceptions.TSE.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Financials, Version=19.0.0.0, Culture=neutral, PublicKeyToken=56cc4aa2c6a12364, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Financials.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Locks.Commercials, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Locks.Commercials.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Locks.ProjectCosting, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Locks.ProjectCosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.Locks.TimesheetAndExpenses, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.Locks.TimesheetAndExpenses.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.People, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.People.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.PersistentObjects, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.PersistentObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Accounting.ProjectCosting, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Accounting.ProjectCosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Common, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Common.Contracts, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Common.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Common.Interop, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Common.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Common.LinqExpandable, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Common.LinqExpandable.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Common.LinqExtensions, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Common.LinqExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Data, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Data.ModelManagement, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Data.ModelManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.IdentityModel.Claims.Sage200, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.IdentityModel.Claims.Sage200.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.IdentityModel.Tokens.SageID, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.IdentityModel.Tokens.SageID.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.IdentityProvider.Windows, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.IdentityProvider.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Integration.SagePayrollProvider, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Integration.SagePayrollProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.IO, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.IO.Local, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.IO.Local.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.MMS.SAA.Client, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.MMS.SAA.Client.20.0.17221.3\lib\net35\Sage.MMS.SAA.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.MMS.View.Data, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.MMS.View.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.MMSAdmin.DbLayer, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.MMSAdmin.20.0.17221.5\lib\net35\Sage.MMSAdmin.DbLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.MMSAdmin.DBSchema, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.MMSAdmin.20.0.17221.5\lib\net35\Sage.MMSAdmin.DBSchema.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.MMSAdmin.Licensing.Common, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.MMSAdmin.20.0.17221.5\lib\net35\Sage.MMSAdmin.Licensing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.MMSAdmin.Util, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.MMSAdmin.20.0.17221.5\lib\net35\Sage.MMSAdmin.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.ObjectStore, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.ObjectStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.ObjectStore.Builder, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.ObjectStore.Builder.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.ObjectStore.Controls, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.ObjectStore.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Query.Extensions, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Query.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.Utils, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b2daa66d74953d11, processorArchitecture=MSIL">
+      <HintPath>packages\Sage200c.Objects.20.0.17221.9\lib\net35\Sage.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Sicon.API, Version=221.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sicon.API.221.0.2\lib\net45\Sicon.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Sicon.API.Sage200.Objects, Version=221.0.40.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sicon.API.Sage200.Objects.221.0.40.3\lib\net452\Sicon.API.Sage200.Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="Sicon.API.Sage200.WebAPI, Version=221.0.40.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sicon.API.Sage200.WebAPI.221.0.40.3\lib\net452\Sicon.API.Sage200.WebAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Sicon.API.Sage200.WebAPI.Models, Version=221.0.40.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sicon.API.Sage200.WebAPI.Models.221.0.40.3\lib\net452\Sicon.API.Sage200.WebAPI.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Sicon.Sage200.Architecture.BLL, Version=221.0.40.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sicon.Sage200.Architecture.BLL.221.0.40.3\lib\net452\Sicon.Sage200.Architecture.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sicon.Sage200.Architecture.DAL, Version=221.0.40.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sicon.Sage200.Architecture.DAL.221.0.40.3\lib\net452\Sicon.Sage200.Architecture.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sicon.Sage200.Architecture.DBO, Version=221.0.40.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sicon.Sage200.Architecture.DBO.221.0.40.3\lib\net452\Sicon.Sage200.Architecture.DBO.dll</HintPath>
+    </Reference>
+    <Reference Include="SiconCsvHelper, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>packages\SiconCsvHelper.1.1.0\lib\net452\SiconCsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Common.4.5.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.26.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.6.26.1\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExampleController.cs" />
+    <Compile Include="ExampleMessageServiceExtension.cs" />
+    <Compile Include="ExampleServiceExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ExampleWebApiExtension.pp" />
+    <None Include="ExampleWebApiExtension.sdbx" />
+    <None Include="NuGet.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Sicon.NuGetHelper.1.0.10\build\Sicon.NuGetHelper.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Sicon.NuGetHelper.1.0.10\build\Sicon.NuGetHelper.props'))" />
+  </Target>
+</Project>
